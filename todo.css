@@ -1,0 +1,136 @@
+*{
+    font-family: 'Poppins',sans-serif;
+}
+.container{
+    background: linear-gradient(135deg,#153677,#4e085f);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.mainDiv{
+    width: 500px;
+    
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+.heading{
+    display: inline-block;
+    color: rgb(53, 53, 122);
+    font-weight: bolder;
+    font-size: large;
+    margin-bottom: 10px;
+}
+.top{
+    background-color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.iconImg{
+    width: 20px;
+}
+.middle{
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    
+    border-radius: 20px;
+    
+    background-color: rgb(222, 222, 222);
+    
+}
+.taskInput{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 100%;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    color: rgb(0, 0, 0);
+}
+
+.addbutton{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+    width:80px;
+    height: 100%;
+    color: white;
+    background-color: rgb(215, 117, 18);
+    cursor: pointer;
+     
+}
+.calender{
+    font-size: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    width:90px;
+    height: 100%;
+    color: white;
+    background-color: rgb(53, 112, 69);
+    cursor: pointer;
+    
+}
+@keyframes shakeOnce {
+  0%   { transform: translateX(0); }
+  30%  { transform: translateX(-8px); }
+  60%  { transform: translateX(8px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation:  shakeOnce 0.3s ease;
+  
+}
+.delete-btn {
+  background-color: red;
+  border: none;
+  margin-left: 10px;
+  padding: 2px 6px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.list span{
+    position: relative;
+    right: 0;
+}
+.taskListcss li{
+    list-style: none;
+    font-size: 20px;
+    
+    padding: 15px 8px 15px 50px;
+    cursor: pointer;
+    /* can't select text insie this elem */
+    user-select: none;
+    position: relative;
+}
+.taskListcss li::before{
+    content: ''; /* creates an empty pseudo-element */
+    left: 10px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background-image: url(circle.png);
+    background-size: cover;
+    background-position: center;
+    position:absolute;
+}
+.taskListcss li.checked{
+    color: gray;
+    text-decoration: line-through;
+
+}
+.taskListcss li.checked::before{
+    background-image: url(checked.png );
+    width: 25px;
+    height: 25px;
+}
