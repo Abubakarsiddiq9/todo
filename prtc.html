@@ -9,11 +9,17 @@
     <input type="text" class="inputt">
     <button class="buttonn">add</button>
     <script>
+        const existing=JSON.parse(localStorage.getItem('continuers')||'[]');
+        console.log(existing);
         const text=document.querySelector('.inputt');
         const button=document.querySelector('.buttonn');
         button.addEventListener('click',()=>{
-            let gotval=text.value;
+            let gotval=text.value.trim();
+            if(gotval==='') return;
+            let allvals=JSON.parse(localStorage.getItem('continuers')||'[]');
+            allvals.push(gotval);
             console.log(gotval);
+            localStorage.setItem('continuers',JSON.stringify(allvals));
             text.value='';
         })
     </script>
