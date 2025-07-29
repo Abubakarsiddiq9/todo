@@ -91,30 +91,37 @@
   
 }
 .delete-btn {
-  background-color: red;
+  background-color: rgb(201, 201, 201);
   border: none;
   margin-left: 10px;
   padding: 2px 6px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 10px;
+  width: 20px;
+  height: 21px;
 }
 
-.list span{
-    position: relative;
-    right: 0;
+.taskGot{
+    
+    width: 400px;
+  overflow-wrap: break-word; /* newer standard */
+  white-space: normal;
+}
+ul.taskListcss{
+    padding-left: 10px;
 }
 .taskListcss li{
+    display: flex;
+    width: 100%;
     list-style: none;
     font-size: 20px;
-    
-    padding: 15px 8px 15px 50px;
+    padding: 15px 8px 15px 45px;
     cursor: pointer;
-    /* can't select text insie this elem */
     user-select: none;
     position: relative;
 }
 .taskListcss li::before{
-    content: ''; /* creates an empty pseudo-element */
+    content: '';
     left: 10px;
     top: 15px;
     width: 20px;

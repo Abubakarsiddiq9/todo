@@ -7,6 +7,7 @@ addbuttonjs.addEventListener('click',()=>{
     let taskGiven=taskInputjs.value;
     let dategot=date.value;
     let formattedDate = '';
+    taskInputjs.value='';
     if(taskGiven===''){
        alert('Please enter a task');
         console.log('write')
@@ -27,11 +28,11 @@ addbuttonjs.addEventListener('click',()=>{
   
 
     const list= document.createElement('li');
-    
-    list.innerHTML=`${taskGiven} (${formattedDate}) <button class="delete-btn">x</button>`;
+    list.classList.add('taskListcss');
+    list.innerHTML=`<span class="taskGot">${taskGiven} (${formattedDate})</span> <button class="delete-btn">x</button>`;
  
     
-    list.classList.add('taskListcss')
+    
     
     taskListjs.appendChild(list);
     list.querySelector('.delete-btn').addEventListener('click', () => {
@@ -49,5 +50,5 @@ addbuttonjs.addEventListener('click',()=>{
             clicked=false;
         }
     })
-    localStorage.setItem('savedTask',JSON.stringify(list.innerText));
+   
 });
